@@ -45,7 +45,7 @@ public class Main
     public void preInit(FMLPreInitializationEvent event)
     {
        LoggingUtil.initiativeLogger = event.getModLog();
-       LoggingUtil.info("Initiative Mod pre initialisation has begun! :D");
+       LoggingUtil.info("Initiative Mod pre initialisation has begun! :D Woo!");
        proxy.preInit(event);
 
        proxy.syncConfig();
