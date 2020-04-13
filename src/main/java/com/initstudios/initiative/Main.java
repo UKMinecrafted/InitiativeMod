@@ -20,6 +20,7 @@ import com.initstudios.initiative.util.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -32,6 +33,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION, acceptedMinecraftVersions = Reference.ACCEPTED_VERSIONS, dependencies = Reference.DEPENDENCIES_FORGE, guiFactory = Reference.GUI_FACTORY)
 public class Main 
 {
+    public static FMLCommonHandler commonHandler;
 
     @Instance
     public static Main instance;

@@ -1,6 +1,29 @@
 {
+	"credit": "Asc4Yin",
 	"parent": "block/thin_block",
 	"textures": {
-		"all": "initmod:blocks/gel_speed"
-	}
+		"wool": "initmod:classic/gel/gel_speed"
+	},
+	"elements": [
+		{
+			"name": "main",
+			"from": [0, 0, 0],
+			"to": [16, 1.5, 16],
+			"faces": {
+				"north": {"uv": [0, 15, 16, 16], "texture": "#wool", "cullface": "north"},
+				"east": {"uv": [0, 15, 16, 16], "texture": "#wool", "cullface": "east"},
+				"south": {"uv": [0, 15, 16, 16], "texture": "#wool", "cullface": "south"},
+				"west": {"uv": [0, 15, 16, 16], "texture": "#wool", "cullface": "west"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#wool"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#wool", "cullface": "down"}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "gel",
+			"origin": [8, 8, 8],
+			"children": [0]
+		}
+	]
 }

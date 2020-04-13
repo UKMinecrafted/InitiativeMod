@@ -13,7 +13,7 @@ import net.minecraft.world.IBlockAccess;
 
 public class LBButton extends Block implements IHaveItem {
 
-    private static final AxisAlignedBB BUTTON_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D);
+    private static final AxisAlignedBB BUTTON_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.1D, 1.0D);
 
 	public LBButton(Material material) {
 		super(material);

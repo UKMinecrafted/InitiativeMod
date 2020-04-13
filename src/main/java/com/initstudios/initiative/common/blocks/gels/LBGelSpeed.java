@@ -13,6 +13,7 @@ package com.initstudios.initiative.common.blocks.gels;
 
 import com.initstudios.initiative.util.IHaveItem;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.BlockFaceShape;
@@ -30,14 +31,17 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class LBGelSpeed extends Block implements IHaveItem {
 
-    protected static final AxisAlignedBB GEL_SPEED_AABB_2 = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.0625D, 1.0D);
+    protected static final AxisAlignedBB GEL_SPEED_AABB_2 = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D);
     private static final AxisAlignedBB GEL_SPEED_AABB = new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D);
 
     public LBGelSpeed(Material material)
     {
         super(material, MapColor.ORANGE_STAINED_HARDENED_CLAY);
+        setSoundType(SoundType.SLIME);
+        this.slipperiness = 0.6F;
         setResistance(1.0F);
         setHardness(0.5F);
+        setHarvestLevel("pickaxe", 0);
     }
 
     public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -60,12 +64,6 @@ public class LBGelSpeed extends Block implements IHaveItem {
         entityIn.motionX *= 1.265D;
         entityIn.motionZ *= 1.265D;
     }
-
-    public boolean canPlaceBlockAt(World worldIn, BlockPos pos)
-    {
-        return super.canPlaceBlockAt(worldIn, pos) && this.canBlockStay(worldIn, pos);
-    }
-
     public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn, BlockPos fromPos)
     {
         this.checkForDrop(worldIn, pos, state);
